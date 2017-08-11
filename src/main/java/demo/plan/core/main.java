@@ -1,4 +1,4 @@
-package demo.plan.main;
+package demo.plan.core;
 
 public class main {
 
