@@ -1,4 +1,4 @@
-package demo.plan.pojo;
+package src.main.java.demo.plan.pojo;
 
 /**
  * 用户基础类<br>

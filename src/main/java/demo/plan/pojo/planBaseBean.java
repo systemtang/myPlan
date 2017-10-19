@@ -4,15 +4,15 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 /**
- * »ù´¡ÈÎÎñÀà
- * 
+ * åŸºç¡€ä»»åŠ¡ç±»
+ *
  * @author Administrator
  *
  */
 public class planBaseBean {
-	private long planId; // ÈÎÎñID£¬Ã¿¸öÈÎÎñÎ¨Ò»
-	private String planName; // ÈÎÎñÃû³Æ£¬ÓÃÓÚ¼òµ¥µÄ±íÊ¾ÈÎÎñ
-	private Date createTime; // ÈÎÎñ´´½¨Ê±¼ä
+	private long planId; // ä»»åŠ¡IDï¼Œæ¯ä¸ªä»»åŠ¡å”¯ä¸€
+	private String planName; // ä»»åŠ¡åç§°ï¼Œç”¨äºç®€å•çš„è¡¨ç¤ºä»»åŠ¡
+	private Date createTime; // ä»»åŠ¡åˆ›å»ºæ—¶é—´
 
 	public planBaseBean(long planId, String planName, Date createTime){
 		if(createTime == null){
@@ -22,7 +22,7 @@ public class planBaseBean {
 		this.planName = planName;
 		this.createTime = createTime;
 	}
-	
+
 	public long getPlanId() {
 		return planId;
 	}
@@ -47,12 +47,12 @@ public class planBaseBean {
 		this.createTime = createTime;
 	}
 
-	@Override
-	public String toString() {
-		return ""
-				+ "ÈÎÎñID:" + String.valueOf(planId)
-				+ ",ÈÎÎñÃû:" + planName
-				+ ",´´½¨Ê±¼ä:" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(createTime);
+	@java.lang.Override
+	public java.lang.String toString() {
+		return "planBaseBean{" +
+				"planId=" + planId +
+				", planName='" + planName + '\'' +
+				", createTime=" + createTime +
+				'}';
 	}
-	
 }
