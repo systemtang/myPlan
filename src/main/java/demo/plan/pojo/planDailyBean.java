@@ -1,9 +1,9 @@
-package src.main.java.demo.plan.pojo;
+package demo.plan.pojo;
 
 import java.util.Date;
 import java.util.List;
 
-public final class planDailyBean extends demo.plan.pojo.planBaseBean {
+public final class planDailyBean extends planBaseBean {
 
 	private Date startTime;
 	private Date endTime;
@@ -16,7 +16,9 @@ public final class planDailyBean extends demo.plan.pojo.planBaseBean {
 		super(planId, planName, createTime);
 	}
 
-	public planDailyBean(Date startTime, Date endTime, int point, boolean state, List<planItem> planItems, Date updateTime) {
+	public planDailyBean(long planId, String planName, Date createTime, Date startTime, Date endTime, int point,
+			boolean state, List<planItem> planItems, Date updateTime) {
+		super(planId, planName, createTime);
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.point = point;
@@ -24,6 +26,8 @@ public final class planDailyBean extends demo.plan.pojo.planBaseBean {
 		this.planItems = planItems;
 		this.updateTime = updateTime;
 	}
+
+
 
 	public Date getStartTime() {
 		return startTime;
