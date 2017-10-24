@@ -2,7 +2,7 @@ package demo.plan.pojo;
 
 import java.util.Date;
 
-public class planItem {
+public class PlanItem {
 
     private long itemId;
     private String itemName;
@@ -11,7 +11,7 @@ public class planItem {
     private Date itemCreateTime;
     private boolean itemCreateFlag;
 
-    public planItem(long itemId, String itemName, boolean itemState, int itemPoint, Date itemCreateTime, boolean itemCreateFlag) {
+    public PlanItem(long itemId, String itemName, boolean itemState, int itemPoint, Date itemCreateTime, boolean itemCreateFlag) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.itemState = itemState;

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by Administrator on 2017/10/19.
  */
 @Controller
-public class planController {
+public class PlanController {
 
 	@RequestMapping("/helloHtml")
     public String helloHtml(Map<String,Object> map){

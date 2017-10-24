@@ -9,12 +9,12 @@ import java.text.SimpleDateFormat;
  * @author Administrator
  *
  */
-public class planBaseBean {
+public class PlanBaseBean {
 	private long planId; // 任务ID，每个任务唯一
 	private String planName; // 任务名称，用于简单的表示任务
 	private Date createTime; // 任务创建时间
 
-	public planBaseBean(long planId, String planName, Date createTime){
+	public PlanBaseBean(long planId, String planName, Date createTime){
 		if(createTime == null){
 			createTime = new Date();
 		}

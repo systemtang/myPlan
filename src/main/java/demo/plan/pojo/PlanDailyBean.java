@@ -3,21 +3,21 @@ package demo.plan.pojo;
 import java.util.Date;
 import java.util.List;
 
-public final class planDailyBean extends planBaseBean {
+public final class PlanDailyBean extends PlanBaseBean {
 
 	private Date startTime;
 	private Date endTime;
 	private int point;
 	private boolean state;
-	private List<planItem> planItems;
+	private List<PlanItem> planItems;
 	private Date updateTime;
 	
-	public planDailyBean(long planId, String planName, Date createTime) {
+	public PlanDailyBean(long planId, String planName, Date createTime) {
 		super(planId, planName, createTime);
 	}
 
-	public planDailyBean(long planId, String planName, Date createTime, Date startTime, Date endTime, int point,
-			boolean state, List<planItem> planItems, Date updateTime) {
+	public PlanDailyBean(long planId, String planName, Date createTime, Date startTime, Date endTime, int point,
+			boolean state, List<PlanItem> planItems, Date updateTime) {
 		super(planId, planName, createTime);
 		this.startTime = startTime;
 		this.endTime = endTime;
@@ -61,11 +61,11 @@ public final class planDailyBean extends planBaseBean {
 		this.state = state;
 	}
 
-	public List<planItem> getPlanItems() {
+	public List<PlanItem> getPlanItems() {
 		return planItems;
 	}
 
-	public void setPlanItems(List<planItem> planItems) {
+	public void setPlanItems(List<PlanItem> planItems) {
 		this.planItems = planItems;
 	}
 
