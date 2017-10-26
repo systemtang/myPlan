@@ -26,11 +26,18 @@
       </plugin>
     </plugins>
     </build>
-
+    
+	<properties>
+	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  <!-- set thymeleaf version -->
+	  <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
+	  <thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>
+	</properties>
+  
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.3.RELEASE</version>
+        <version>1.4.0.RELEASE</version>
     </parent>
 
     <dependencies>

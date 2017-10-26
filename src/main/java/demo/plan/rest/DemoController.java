@@ -1,8 +1,10 @@
 package demo.plan.rest;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,4 +20,10 @@ public class DemoController {
     public List<Demo> likeName(String name){
        return demoService.likeName(name);
     }
+    
+//	@RequestMapping("/index2")
+//    public String index(Model map){
+//		map.addAttribute("myword","THE WORLD TOKIO!");
+//       return"/index";
+//    }
 }
