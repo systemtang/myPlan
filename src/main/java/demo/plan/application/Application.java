@@ -1,4 +1,4 @@
-package demo.plan.core;
+package demo.plan.application;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

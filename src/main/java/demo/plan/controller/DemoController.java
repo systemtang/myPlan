@@ -1,4 +1,4 @@
-package demo.plan.rest;
+package demo.plan.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -21,9 +21,4 @@ public class DemoController {
        return demoService.likeName(name);
     }
     
-//	@RequestMapping("/index2")
-//    public String index(Model map){
-//		map.addAttribute("myword","THE WORLD TOKIO!");
-//       return"/index";
-//    }
 }

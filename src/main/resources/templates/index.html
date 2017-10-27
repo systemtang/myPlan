@@ -29,8 +29,12 @@
 	<div class="main">
 		<div class="article-list">
 			<div class="item">
-				<a class="title" href="#">${plan.name}</a>
-				<div class="status">发布于：${plan.date} | 分数：${plan.point} | 状态：${plan.state}</div>
+				<a class="title" href="#" th:text="${plan!=null && plan.name!=null} ? ${plan.name}:'计划名称'">计划名称</a>
+				<div class="status">
+					发布于：<span th:text="${plan!=null && plan.date!=null} ? ${plan.date}:'2017-09-27'">2017-09-27</span> 
+					| 分数：<span th:text="${plan!=null && plan.point!=null} ? ${plan.point}:'233'">233</span>
+					| 状态：<span th:text="${plan!=null && plan.state!=null} ? (${plan.state}==1?'开启':'关闭'):'开启'">开启</span>
+				</div>
 				<div class="content no-select">
 					<p>
 						<label id="plan.id1.planitem">A:</label>
