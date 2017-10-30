@@ -27,29 +27,32 @@
 		</div>
 	</div>
 	<div class="main">
-		<div class="article-list">
-			<div class="item">
-				<a class="title" href="#" th:text="${plan!=null && plan.name!=null} ? ${plan.name}:'计划名称'">计划名称</a>
-				<div class="status">
-					发布于：<span th:text="${plan!=null && plan.date!=null} ? ${plan.date}:'2017-09-27'">2017-09-27</span> 
-					| 分数：<span th:text="${plan!=null && plan.point!=null} ? ${plan.point}:'233'">233</span>
-					| 状态：<span th:text="${plan!=null && plan.state!=null} ? (${plan.state}==1?'开启':'关闭'):'开启'">开启</span>
+		<div class="article-list" th:if="${plans!=null}">
+			<div class="item" th:each="plan,iterStat : ${plans}">
+				<div th:object="${plan}">
+					<a class="title" href="#" th:text="*{name!=null} ? *{name}:'计划名称'">计划名称</a>
+					<div class="status">
+						发布于：<span th:text="*{date!=null} ? *{date}:'2017-09-27'">2017-09-27</span> 
+						| 分数：<span th:text="*{point!=null} ? *{point}:'233'">233</span>
+						| 状态：<span th:text="*{state!=null} ? (*{state}==1?'开启':'关闭'):'开启'">开启</span>
+					</div>
+					<!-- <div class="content no-select">
+						<p>
+							<label id="plan.id1.planitem">A:</label>
+							<label for="plan.id1.done">完成：</label>
+							<input id="plan.id1.done" name="plan.id1" type="radio" />
+							<label for="plan.id1.notdone">未完成：</label>
+							<input id="plan.id1.notdone" name="plan.id1" type="radio" />
+							<label>分数：</label>
+							<input id="plan.id1.pointitem" type="text" />
+						</p>
+						<p><label>B:</label><input name="#" type="text" /></p>
+						<p><label>C:</label><input name="#" type="text" /></p>
+					</div> -->
 				</div>
-				<div class="content no-select">
-					<p>
-						<label id="plan.id1.planitem">A:</label>
-						<label for="plan.id1.done">完成：</label>
-						<input id="plan.id1.done" name="plan.id1" type="radio" />
-						<label for="plan.id1.notdone">未完成：</label>
-						<input id="plan.id1.notdone" name="plan.id1" type="radio" />
-						<label>分数：</label>
-						<input id="plan.id1.pointitem" type="text" />
-					</p>
-					<p><label>B:</label><input name="#" type="text" /></p>
-					<p><label>C:</label><input name="#" type="text" /></p>
-				</div>
+				
 			</div>
-			<div class="item">
+			<!-- <div class="item">
 				<a class="title" href="article.html">my first logo</a>
 				<div class="status">发布与：2050-10-01 | 阅读：3500 | 标签：#JAVA #HTML</div>
 				<div class="content">
@@ -68,7 +71,7 @@
 					MPP.HOLDER_NAME投保人名称,MPP.POLICY_CODE保单号,MPP.PRODUCT_CODE险种代码,MPP.PRODUCT_NAME险种名称,
 					MPP.ISSUE_DATE承保日期,MPP.SURRENDER_DATE退保日期,MPP.CHARGE_YEAR_QHL缴费年限,MPP.PREM承保保费
 				</div>
-			</div>
+			</div>	 -->
 		</div>
 	</div>
 	
