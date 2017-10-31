@@ -2,9 +2,54 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
-this is 404 page
+this is 404 page<br>
+<code id="map" style="letter-spacing:6px;text-align:justify;">
+
+</code>
+
+<script type="text/javascript">
+function createWorld(x,y){
+	console.log("x="+x+";y="+y+";");
+	if(x < 3 || y < 3){
+		console.log("至少需要一个3X3的世界才能放置物体");
+		return false;
+	}
+	var x = x;
+	var y = y;
+	var Arr = [];
+	for(var ty = 0; ty < y; ty++){
+		var tArr = [];
+		for(var tx = 0; tx < x; tx++){
+			if(tx == 0 || tx == x-1){
+				tArr.push("A");
+			}else if(ty == 0 || ty == y-1){
+				tArr.push("A");
+			}else{
+				tArr.push("X");
+			}
+		}
+		Arr.push(tArr);
+	}
+	return Arr;
+}
+
+function printWorld(Arr){
+	if(!Arr){
+		return false;
+	}
+	var map = "";
+	$.each(Arr, function(i, val){
+		$.each(val, function(j, vall){
+			map += vall;
+		});
+		map += "<br>";
+	});
+	$("#map").html(map);
+}
+</script>
 </body>
 </html>
