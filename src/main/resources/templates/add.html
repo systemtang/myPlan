@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X_UA_Compatible" content="ie=edge" />
+	<title>add plan</title>
+	
+	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+</head>
+<body>
+	<div>
+		主任务名：<input  type="text" /><br/>
+		次任务名：<input type="text" />分数：<input type="text" /><br/>
+		次任务名：<input type="text" />分数：<input type="text" /><br/>
+		次任务名：<input type="text" />分数：<input type="text" /><br/>
+		<button>保存</button><button>继续添加</button>
+	</div>
+	
+	<script type="text/javascript">
+	var arr[]; 
+	$(":input[name='inp']").each(function(){ 
+		arr.push($(this).val()); 
+	});
+	</script>
+</body>
+</html>

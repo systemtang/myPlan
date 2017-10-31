@@ -46,4 +46,5 @@ public class PlanController {
 		map.addAttribute("plans", plans);
        return"/index";
     }
+	
 }

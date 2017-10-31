@@ -3,8 +3,12 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
         <title>Hello World!</title>
+        
+        <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
     </head>
     <body>
+    	<div id="trj">
+    	</div>
         <h1 th:inline="text">Hello.v.2</h1>
         <p th:text="${hello}"></p>
         <div th:if="${myself=='yes1'}">nihao
