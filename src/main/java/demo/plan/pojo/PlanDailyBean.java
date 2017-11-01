@@ -3,8 +3,15 @@ package demo.plan.pojo;
 import java.util.Date;
 import java.util.List;
 
-public final class PlanDailyBean extends PlanBaseBean {
+/**
+ * @author tangrj001
+ *
+ */
+public final class PlanDailyBean {
 
+	private long planId; // 任务ID，每个任务唯一
+	private String planName; // 任务名称，用于简单的表示任务
+	private Date createTime; // 任务创建时间
 	private Date startTime;
 	private Date endTime;
 	private int point;
@@ -12,13 +19,12 @@ public final class PlanDailyBean extends PlanBaseBean {
 	private List<PlanItem> planItems;
 	private Date updateTime;
 	
-	public PlanDailyBean(long planId, String planName, Date createTime) {
-		super(planId, planName, createTime);
-	}
-
 	public PlanDailyBean(long planId, String planName, Date createTime, Date startTime, Date endTime, int point,
 			boolean state, List<PlanItem> planItems, Date updateTime) {
-		super(planId, planName, createTime);
+		super();
+		this.planId = planId;
+		this.planName = planName;
+		this.createTime = createTime;
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.point = point;
@@ -27,7 +33,29 @@ public final class PlanDailyBean extends PlanBaseBean {
 		this.updateTime = updateTime;
 	}
 
+	public long getPlanId() {
+		return planId;
+	}
 
+	public void setPlanId(long planId) {
+		this.planId = planId;
+	}
+
+	public String getPlanName() {
+		return planName;
+	}
+
+	public void setPlanName(String planName) {
+		this.planName = planName;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
 
 	public Date getStartTime() {
 		return startTime;
@@ -77,15 +105,11 @@ public final class PlanDailyBean extends PlanBaseBean {
 		this.updateTime = updateTime;
 	}
 
-	@java.lang.Override
-	public java.lang.String toString() {
-		return "planDailyBean{" +
-				"startTime=" + startTime +
-				", endTime=" + endTime +
-				", point=" + point +
-				", state=" + state +
-				", planItems=" + planItems +
-				", updateTime=" + updateTime +
-				'}';
+	@Override
+	public String toString() {
+		return "PlanDailyBean [planId=" + planId + ", planName=" + planName + ", createTime=" + createTime
+				+ ", startTime=" + startTime + ", endTime=" + endTime + ", point=" + point + ", state=" + state
+				+ ", planItems=" + planItems + ", updateTime=" + updateTime + "]";
 	}
+
 }
