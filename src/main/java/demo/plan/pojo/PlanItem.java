@@ -11,14 +11,7 @@ public class PlanItem {
     private Date itemCreateTime;
     private boolean itemCreateFlag;
 
-    public PlanItem(long itemId, String itemName, boolean itemState, int itemPoint, Date itemCreateTime, boolean itemCreateFlag) {
-        this.itemId = itemId;
-        this.itemName = itemName;
-        this.itemState = itemState;
-        this.itemPoint = itemPoint;
-        this.itemCreateTime = itemCreateTime;
-        this.itemCreateFlag = itemCreateFlag;
-    }
+    public PlanItem() {}
 
     public long getItemId() {
         return itemId;
@@ -44,28 +37,34 @@ public class PlanItem {
         return itemCreateFlag;
     }
 
-    public void setItemId(long itemId) {
+    public PlanItem setItemId(long itemId) {
         this.itemId = itemId;
+        return this;
     }
 
-    public void setItemName(String itemName) {
+    public PlanItem setItemName(String itemName) {
         this.itemName = itemName;
+        return this;
     }
 
-    public void setItemState(boolean itemState) {
+    public PlanItem setItemState(boolean itemState) {
         this.itemState = itemState;
+        return this;
     }
 
-    public void setItemPoint(int itemPoint) {
+    public PlanItem setItemPoint(int itemPoint) {
         this.itemPoint = itemPoint;
+        return this;
     }
 
-    public void setItemCreateTime(Date itemCreateTime) {
+    public PlanItem setItemCreateTime(Date itemCreateTime) {
         this.itemCreateTime = itemCreateTime;
+        return this;
     }
 
-    public void setItemCreateFlag(boolean itemCreateFlag) {
+    public PlanItem setItemCreateFlag(boolean itemCreateFlag) {
         this.itemCreateFlag = itemCreateFlag;
+        return this;
     }
 
     @java.lang.Override

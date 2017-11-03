@@ -10,22 +10,77 @@
 	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
 </head>
 <body>
-	<form id="addPlanForm">
-		<input name="itemSize" type="hidden" value="3" />
-		主任务名：<input name="planName" type="text" /><br/>
-		次任务名：<input name="itemName1" type="text" />分数：<input name="itemPoint1" type="text" placeholder="为空默认给0" /><br/>
-		次任务名：<input name="itemName2" type="text" />分数：<input name="itemPoint2" type="text" placeholder="为空默认给0" /><br/>
-		次任务名：<input name="itemName3" type="text" />分数：<input name="itemPoint3" type="text" placeholder="为空默认给0" /><br/>
+	<form id="addPlanForm" onSubmit="javascript:return false">
+		<input id="itemSize" name="itemSize" type="hidden" value="3" />
+		主任务名：<input id="planName" name="planName" type="text" /><br/>
+		次任务名：<input id="itemName1" name="itemName1" type="text" />分数：<input id="itemPoint1" name="itemPoint1" type="text" placeholder="为空默认给0" /><br/>
+		次任务名：<input id="itemName2" name="itemName2" type="text" />分数：<input id="itemPoint2" name="itemPoint2" type="text" placeholder="为空默认给0" /><br/>
+		次任务名：<input id="itemName3" name="itemName3" type="text" />分数：<input id="itemPoint3" name="itemPoint3" type="text" placeholder="为空默认给0" /><br/>
 		<button onclick="savePlan()">保存</button><button>继续添加</button>
 	</form>
 	
 	<script type="text/javascript">
-	function savePlan(){
+	
+	function savePlan(url,json){
+		$.post(url,json,function(data){
+			console.log(data);
+		});
+	}
+	
+	var bean = {};
+	bean.itemSize = "itemSize";
+	bean.planName = "planName";
+	bean.itemName = "itemName";
+	bean.itemPoint = "itemPoint";
+	
+	
+	function getPlanData(){
 		var err = checkPlan();
 		if(err != ""){
 			alert(err);
 			return false;
 		}
+		
+		var obj = {};
+		var data = {};
+		var planName = "";
+		var itemSize = "";
+		var itemNameArr = new Array();
+		var itemPointArr = new Array();
+		
+		$("#addPlanForm").serializeArray().forEach(function(val){
+			
+			if(val.name == bean.itemSize && !itemSize){
+				itemSize = val.value;
+			}
+			
+			if(val.name == bean.planName && !planName){
+				planName = val.value;
+			}
+			
+			if(val.name.indexOf(bean.itemName) != -1){
+				itemNameArr.push(val.value);
+			}
+			
+			if(val.name.indexOf(bean.itemPoint) != -1){
+				itemPointArr.push(val.value);
+			}
+			
+		});
+		
+		if(itemNameArr.length != itemSize 
+		|| itemNameArr.length != itemPointArr.length){
+			err = "提交参数异常:任务数量异常";
+			alert(err);
+			return false;
+		}
+		
+		data.planName = planName;
+		data.itemSize = itemSize;
+		data.itemNameArr = itemNameArr;
+		data.itemPointArr = itemPointArr;
+		obj.data = data;
+		return obj;
 	}
 	
 	function checkPlan(){
@@ -50,6 +105,8 @@
 				return err;
 			}
 		});
+		
+		return err;
 	}
 	/* 
 	var arr[]; 

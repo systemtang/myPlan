@@ -47,4 +47,9 @@ public class PlanController {
        return"/index";
     }
 	
+	@RequestMapping("/add")
+    public String add(){
+       return"/add";
+    }
+	
 }
