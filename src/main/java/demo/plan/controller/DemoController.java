@@ -1,13 +1,9 @@
 package demo.plan.controller;
 
 import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +21,7 @@ public class DemoController {
     }
     
     @RequestMapping("/savePlan")
-    public void savePlan(HttpServletRequest request, HttpServletResponse response){
+    public void savePlan(@RequestBody String jsonData){
     	System.out.println("s");
     }
     

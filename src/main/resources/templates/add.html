@@ -21,9 +21,18 @@
 	
 	<script type="text/javascript">
 	
-	function savePlan(url,json){
-		$.post(url,json,function(data){
-			console.log(data);
+	function savePlan(data){
+		var jsonData = JSON.stringify(data);
+		$.ajax({
+			type : "post",
+			url : "/savePlan",
+			data : jsonData,
+			contentType : "application/json",
+			dataType : "json",
+			success : function(data){console.log(data)},
+			error : function() {
+				Smart.console("请求服务器出错!请检查网络连接");
+			}
 		});
 	}
 	
@@ -41,7 +50,6 @@
 			return false;
 		}
 		
-		var obj = {};
 		var data = {};
 		var planName = "";
 		var itemSize = "";
@@ -79,8 +87,7 @@
 		data.itemSize = itemSize;
 		data.itemNameArr = itemNameArr;
 		data.itemPointArr = itemPointArr;
-		obj.data = data;
-		return obj;
+		return data;
 	}
 	
 	function checkPlan(){
