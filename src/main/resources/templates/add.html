@@ -21,7 +21,8 @@
 	
 	<script type="text/javascript">
 	
-	function savePlan(data){
+	function savePlan(){
+		var data = getPlanData();
 		var jsonData = JSON.stringify(data);
 		$.ajax({
 			type : "post",
@@ -31,7 +32,7 @@
 			dataType : "json",
 			success : function(data){console.log(data)},
 			error : function() {
-				Smart.console("请求服务器出错!请检查网络连接");
+				console.log("请求服务器出错!请检查网络连接");
 			}
 		});
 	}
