@@ -1,7 +1,6 @@
 package demo.plan.pojo;
 
 import java.util.Date;
-import java.text.SimpleDateFormat;
 
 /**
  * 基础任务类

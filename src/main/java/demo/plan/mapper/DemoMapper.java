@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Select;
 
+import demo.plan.pojo.DailyPlanBean;
 import demo.plan.pojo.Demo;
 
 public interface DemoMapper {
@@ -16,4 +17,6 @@ public interface DemoMapper {
    
     @Select("select UserName from Policy where UserID = #{UserID}")
     public String getNameById(long id);
+
+	public boolean savePlan(DailyPlanBean dp) throws Exception;
 }

@@ -20,13 +20,12 @@ import demo.plan.util.DateUtil;
 import demo.plan.util.JSONUtil;
 
 @RestController
-@SuppressWarnings("unused")
 public class DemoController {
 	@Autowired
     private DemoService demoService;
    
     @RequestMapping("/likeName")
-    public List<Demo> likeName(String name){
+    public List<Demo> likeName(String name) throws Exception{
        return demoService.likeName(name);
     }
     
@@ -72,6 +71,7 @@ public class DemoController {
     		.setPlanItems(planItems);
     		
     		// Service.insertDailyPlan(dp)
+    		boolean res = demoService.savePlan(dp);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
