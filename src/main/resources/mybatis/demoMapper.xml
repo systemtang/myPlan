@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="demo.plan.dao.DemoMapper">
+
+	<resultMap type="demo.plan.pojo.Demo" id="demoMap">
+		<id column="id" property="id"/>
+		<result column="name" property="username"/>
+	</resultMap>
+
+	<parameterMap type="demo.plan.pojo.Demo" id="demoBean">
+		<parameter property="id" resultMap="demoMap" />
+		<parameter property="username" resultMap="demoMap"/>
+	</parameterMap>
+
+    <select id="getDemo" parameterType="long" resultType="String">
+        SELECT
+        name
+        FROM demo
+        WHERE id = #{id}
+    </select>
+    
+    <insert id="newDemo" parameterMap="demoBean">
+    	insert into demo values(#{id},#{username})
+    </insert>
+
+</mapper>

@@ -2,26 +2,19 @@ package demo.plan.pojo;
 
 public class Demo {
 
-	private long PID;
-	private long UserID;
-	private String UserName;
-	public long getPID() {
-		return PID;
+	private long id;
+	private String username;
+	public long getId() {
+		return id;
 	}
-	public void setPID(long pID) {
-		PID = pID;
+	public void setId(long id) {
+		this.id = id;
 	}
-	public long getUserID() {
-		return UserID;
+	public String getUsername() {
+		return username;
 	}
-	public void setUserID(long userID) {
-		UserID = userID;
-	}
-	public String getUserName() {
-		return UserName;
-	}
-	public void setUserName(String userName) {
-		UserName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	

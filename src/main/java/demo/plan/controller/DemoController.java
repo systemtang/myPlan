@@ -29,6 +29,19 @@ public class DemoController {
        return demoService.likeName(name);
     }
     
+    @RequestMapping("/getDemo")
+    public List<Demo> getDemo(long id) throws Exception{
+       return demoService.getDemo(id);
+    }
+    
+    @RequestMapping("/newDemo")
+    public boolean newDemo() throws Exception{
+    	Demo demo = new Demo();
+    	demo.setId(2);
+    	demo.setUsername("test");
+       return demoService.newDemo(demo);
+    }
+    
     @RequestMapping("/savePlan")
     public @ResponseBody String savePlan(@RequestBody String reqData){
     	JSONObject req = null;
