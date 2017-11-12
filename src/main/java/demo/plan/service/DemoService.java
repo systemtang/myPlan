@@ -8,6 +8,8 @@ import demo.plan.pojo.Demo;
 public interface DemoService {
 
 	public List<Demo> likeName(String name) throws Exception;
-
+	
+	public List<Demo> getDemo(long id) throws Exception;
+	
 	public boolean savePlan(DailyPlanBean dp) throws Exception;
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="demo.plan.dao.DemoMapper">
+
+    <!-- 根据ID查询数据 -->
+    <select id="getDemo" parameterType="long" resultType="String">
+        select name from demo where id = #{id}
+    </select>
+
+</mapper>
